@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Double-Consciousness and Vietnamese-American Culture in the Modern Era</title>
+    <style>
+        body {
+            font-family: Cambria, 'Times New Roman', Times, serif;
+            background: linear-gradient(135deg, #f8fdff 0%, #e6f7ff 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .side-bar-bg {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            background: #fff;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 1;
+            border-radius: 0 40px 40px 0;
+        }
+        .side-bar-bg.left {
+            left: 0;
+            border-radius: 0 40px 40px 0;
+        }
+        .side-bar-bg.right {
+            right: 0;
+            border-radius: 40px 0 0 40px;
+        }
+        @media (max-width: 1400px) {
+            .side-bar-bg {
+                width: 80px;
+            }
+        }
+        @media (max-width: 1050px) {
+            .side-bar-bg {
+                display: none;
+            }
+        }
+        .hero-banner {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: rgba(255,255,255,0.18);
+            position: relative;
+            padding-bottom: 0;
+            z-index: 2;
+        }
+        .hero-title {
+            font-size: 5em;
+            font-weight: 900;
+            color: #222;
+            text-align: center;
+            letter-spacing: 1.5px;
+            margin: 0;
+            padding: 90px 20px 50px 20px;
+            text-shadow: 0 6px 32px rgba(0,0,0,0.10);
+            z-index: 2;
+            line-height: 1.1;
+        }
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100vw;
+            height: 75vh;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            background: none;
+            padding: 0 2vw;
+            box-sizing: border-box;
+        }
+        .hero-img-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+            transition: box-shadow 0.2s;
+            width: 40vw;
+            max-width: 600px;
+            height: 75vh;
+            box-sizing: border-box;
+            overflow: visible;
+            padding: 0;
+        }
+        .hero-img-wrapper:hover .hero-img {
+            border-color: #319795;
+            box-shadow: 0 4px 32px 0 rgba(79,209,197,0.18);
+        }
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 20px;
+            display: block;
+            background: #fafdff;
+            margin: 0;
+            border: 6px solid #4fd1c5;
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .main-layout {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            z-index: 3;
+        }
+        .sidebar, .sidebar.right {
+            display: none !important;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px 0 0 0;
+            padding: 40px 24px 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            position: relative;
+            z-index: 4;
+            background: rgba(255,255,255,0.98);
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+        }
+        .info-box {
+            background: rgba(255,255,255,0.98);
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+            padding: 36px 32px;
+            transition: box-shadow 0.2s, opacity 0.7s, transform 0.7s;
+            border-left: 7px solid #38b2ac;
+            border-right: 7px solid #38b2ac;
+            margin: 0 0 0 0;
+            opacity: 1;
+            transform: translateY(0);
+            box-sizing: border-box;
+        }
+        .info-box + .info-box {
+            margin-top: 28px;
+        }
+        .info-box.visible {
+        }
+        .info-box:hover {
+            box-shadow: 0 8px 32px rgba(56,178,172,0.13), 0 2px 12px rgba(56,178,172,0.07);
+        }
+        .info-title {
+            color: #319795;
+            font-size: 1.6em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .info-content {
+            color: #333;
+            font-size: 1.08em;
+            line-height: 1.7;
+        }
+        .takeaway-box {
+            background: #38b2ac;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(56,178,172,0.13), 0 1.5px 8px rgba(56,178,172,0.07);
+            padding: 36px 32px;
+            margin-top: 28px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 1.25em;
+            border-left: 7px solid #319795;
+            border-right: 7px solid #319795;
+        }
+        .takeaway-title {
+            font-size: 1.5em;
+            margin-bottom: 14px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .citation-footer {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 1em;
+            color: #666;
+            font-style: italic;
+            letter-spacing: 0.2px;
+        }
+        @media (max-width: 1400px) {
+            .container {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .side-bar-bg {
+                width: 60px;
+            }
+        }
+        @media (max-width: 1200px) {
+            .hero-images {
+                height: 55vh;
+            }
+            .hero-img-wrapper {
+                height: 55vh;
+                max-width: 90vw;
+                width: 45vw;
+            }
+            .main-layout {
+                gap: 10px;
+            }
+        }
+        @media (max-width: 1050px) {
+            .main-layout {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .container {
+                margin: 0;
+            }
+            .side-bar-bg {
+                display: none;
+            }
+        }
+        @media (max-width: 900px) {
+            .hero-title {
+                font-size: 2.7em;
+                padding: 50px 5px 24px 5px;
+            }
+            .hero-images {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+                gap: 32px;
+                padding: 0 2vw;
+            }
+            .hero-img-wrapper {
+                width: 98vw;
+                max-width: 99vw;
+                height: 32vh;
+                border-radius: 18px;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 1.7em;
+                padding: 28px 5px 10px 5px;
+            }
+            .hero-images {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+                gap: 18px;
+                padding: 0 1vw;
+            }
+            .hero-img-wrapper {
+                width: 99vw;
+                max-width: 100vw;
+                height: 18vh;
+                border-width: 0;
+                border-radius: 10px;
+                padding: 0;
+            }
+            .hero-img {
+                border-width: 4px;
+                border-radius: 8px;
+            }
+            .container {
+                padding: 20px 5px 20px 5px;
+                gap: 18px;
+                border-radius: 14px;
+            }
+            .info-box {
+                padding: 22px 10px;
+                border-left-width: 5px;
+                border-right-width: 5px;
+                border-radius: 10px;
+            }
+            .info-box + .info-box {
+                margin-top: 14px;
+            }
+            .takeaway-box {
+                padding: 18px 6px;
+                border-radius: 10px;
+                font-size: 1em;
+                margin-top: 14px;
+            }
+            .takeaway-title {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+            .side-bar-bg {
+                display: none;
+            }
+            .citation-footer {
+                font-size: 0.95em;
+                margin: 24px 0 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="side-bar-bg left"></div>
+    <div class="side-bar-bg right"></div>
+    <div class="hero-banner">
+        <div class="hero-title">
+            Double-Consciousness and Vietnamese-American Culture in the Modern Era
+        </div>
+        <div class="hero-images">
+            <div class="hero-img-wrapper">
+                <img class="hero-img" src="{{ url_for('static', filename='du_bois.jpg') }}" alt="W.E.B. Du Bois" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/1/1e/W.E.B._Du_Bois_1918.jpg';">
+            </div>
+            <div class="hero-img-wrapper">
+                <img class="hero-img" src="{{ url_for('static', filename='flag_of_south_vietnam.jpg') }}" alt="South Vietnamese Flag" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Flag_of_South_Vietnam.svg';">
+            </div>
+        </div>
+    </div>
+    <div class="main-layout">
+        <aside class="sidebar"></aside>
+        <div class="container">
+            <div class="info-box" id="family">
+                <div class="info-title">from The Souls of Black Folk</div>
+                <div class="info-content">
+                    "two souls, two thoughts, two unreconciled strivings; two warring ideals in one dark body, whose dogged strength alone keeps it from being torn asunder." (Du Bois 2)
+                </div>
+            </div>
+            <div class="info-box" id="cuisine">
+                <div class="info-title">What is Double-Consciousness</div>
+                <div class="info-content">
+                    W.E.B. Du Bois depicts double-consciousness as the conflict of two identities within one person. It creates disillusionment with both cultures and causes some to question who they are as a person. 
+                </div>
+            </div>
+            <div class="info-box" id="identity-why">
+                <div class="info-title">Why does this matter?</div>
+                <div class="info-content">
+                    As Vietnamese-Americans, we often navigate two distinct cultures: Vietnamese and American. We may speak Vietnamese at home and English in public. We may sometimes feel like an outcast among other Vietnamese relatives or American friends. We experience double-consciousness on the daily.
+                </div>
+            </div>
+            <div class="info-box" id="identity-what">
+                <div class="info-title">What can we do?</div>
+                <div class="info-content">
+                    Embrace both parts of yourself. Navigate the expectations of family and American society while being true to yourself. Do not choose one identity over the other, accept that you are who you are. Do not let anyone sway you otherwise.
+                </div>
+            </div>
+            <div class="info-box" id="identity-personal">
+                <div class="info-title">Personal Experience</div>
+                <div class="info-content">
+                    I was often bullied as a child for neither being able to speak English or Vietnamese properly. I was inadequate in both cultures' etiquette. Growing up, I was faced with the harsh reality that I was different from the other kids born here. Instead of choosing one identity over the other, I embraced my identity as a Vietnamese-American. I did not let what others said bother me and embraced my favorite parts of both identities. I may not look, sound, or talk like a Vietnamese or an American, but being a mixture of both is a gift in itself. 
+                </div>
+            </div>
+            <div class="takeaway-box" id="takeaway">
+                <div class="takeaway-title">Takeaway</div>
+                BE YOURSELF, EMBRACE BOTH IDENTITIES, MERGE YOUR DOUBLE-CONSCIOUSNESS
+            </div>
+        </div>
+        <aside class="sidebar right"></aside>
+    </div>
+    <div class="citation-footer">
+        Du Bois, W.E.B. <i>The Souls of Black Folk</i>. The Journal of Pan African Studies, 1903
+    </div>
+</body>
+</html>
